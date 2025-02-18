@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, ImageBackground } from 'react-native';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
-import { RootStackParamList } from '../App'; // ✅ นำเข้า Type ของ Stack
+import { RootStackParamList } from '../App';
 import styles from '../styles/headerStyles';
 
 export default function Header() {
@@ -18,7 +18,7 @@ export default function Header() {
           Your intelligent companion for pest identification and management.
         </Text>
         <View style={styles.buttonGroup}>
-          {/* ✅ ปุ่ม Start Detection ใช้ Navigation ที่ถูกต้อง */}
+          {/* ✅ ปุ่ม Start Detection นำทางไปยัง PestDetectionScreen */}
           <TouchableOpacity 
             style={styles.primaryButton}
             onPress={() => navigation.navigate('PestDetectionScreen')}
@@ -26,8 +26,11 @@ export default function Header() {
             <Text style={styles.primaryButtonText}>Start Detection</Text>
           </TouchableOpacity>
 
-          {/* ปุ่ม Browse Pests (ยังไม่ได้กำหนด Navigation) */}
-          <TouchableOpacity style={styles.secondaryButton}>
+          {/* ✅ ปุ่ม Browse Pests นำทางไปยัง BrowsePestsScreen */}
+          <TouchableOpacity 
+            style={styles.secondaryButton}
+            onPress={() => navigation.navigate('BrowsePestsScreen')}
+          >
             <Text style={styles.secondaryButtonText}>Browse Pests</Text>
           </TouchableOpacity>
         </View>

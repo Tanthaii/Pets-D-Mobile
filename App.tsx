@@ -4,14 +4,16 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './pages/LoginScreen';
 import SignUpScreen from './pages/SignUpScreen';
 import HomeScreen from './pages/HomeScreen';
-import PestDetectionScreen from './pages/PestDetectionScreen'; // ✅ นำเข้า PestDetectionScreen
+import PestDetectionScreen from './pages/PestDetectionScreen';
+import BrowsePestsScreen from './pages/BrowsePestsScreen'; // ✅ เพิ่มการนำเข้า BrowsePestsScreen
 
-// ✅ ประกาศ RootStackParamList ให้ TypeScript รู้จัก PestDetectionScreen
+// ✅ เพิ่ม BrowsePestsScreen ลงใน RootStackParamList
 export type RootStackParamList = {
   LoginScreen: undefined;
   SignUpScreen: undefined;
   HomeScreen: undefined;
   PestDetectionScreen: undefined;
+  BrowsePestsScreen: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -24,6 +26,7 @@ export default function App() {
         <Stack.Screen name="SignUpScreen" component={SignUpScreen} options={{ headerShown: false }} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="PestDetectionScreen" component={PestDetectionScreen} options={{ title: 'Pest Detection' }} />
+        <Stack.Screen name="BrowsePestsScreen" component={BrowsePestsScreen} options={{ title: 'Browse Pests' }} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );
