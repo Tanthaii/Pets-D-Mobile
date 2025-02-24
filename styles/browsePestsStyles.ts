@@ -86,7 +86,7 @@ export default StyleSheet.create({
   },
   closeButton: {
     marginTop: 20,
-    backgroundColor: '#007bff',
+    backgroundColor: 'green',
     padding: 10,
     borderRadius: 8,
   },

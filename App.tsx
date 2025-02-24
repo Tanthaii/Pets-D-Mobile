@@ -5,7 +5,8 @@ import LoginScreen from './pages/LoginScreen';
 import SignUpScreen from './pages/SignUpScreen';
 import HomeScreen from './pages/HomeScreen';
 import PestDetectionScreen from './pages/PestDetectionScreen';
-import BrowsePestsScreen from './pages/BrowsePestsScreen'; // ✅ เพิ่มการนำเข้า BrowsePestsScreen
+import BrowsePestsScreen from './pages/BrowsePestsScreen'; 
+import ExpertKnowledgeScreen from './pages/ExpertKnowledgeScreen'; // ✅ ตรวจสอบว่าถูกต้อง
 
 // ✅ เพิ่ม BrowsePestsScreen ลงใน RootStackParamList
 export type RootStackParamList = {
@@ -14,6 +15,7 @@ export type RootStackParamList = {
   HomeScreen: undefined;
   PestDetectionScreen: undefined;
   BrowsePestsScreen: undefined;
+  ExpertKnowledgeScreen: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -27,6 +29,7 @@ export default function App() {
         <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="PestDetectionScreen" component={PestDetectionScreen} options={{ title: 'Pest Detection' }} />
         <Stack.Screen name="BrowsePestsScreen" component={BrowsePestsScreen} options={{ title: 'Browse Pests' }} /> 
+        <Stack.Screen name="ExpertKnowledgeScreen" component={ExpertKnowledgeScreen} options={{ title: 'Expert Knowledge' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
